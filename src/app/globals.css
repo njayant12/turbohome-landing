@@ -1,26 +1,78 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --turbo-blue: #2563eb;
+  --turbo-blue-dark: #1d4ed8;
+  --turbo-blue-light: #3b82f6;
+  --turbo-gold: #f59e0b;
+  --turbo-green: #10b981;
+  --turbo-red: #ef4444;
+  --turbo-gray-900: #111827;
+  --turbo-gray-700: #374151;
+  --turbo-gray-500: #6b7280;
+  --turbo-gray-300: #d1d5db;
+  --turbo-gray-100: #f3f4f6;
+  --turbo-gray-50: #f9fafb;
+  --turbo-white: #ffffff;
+
+  --background: var(--turbo-white);
+  --foreground: var(--turbo-gray-900);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-turbo-blue: #2563eb;
+  --color-turbo-blue-dark: #1d4ed8;
+  --color-turbo-blue-light: #3b82f6;
+  --color-turbo-gold: #f59e0b;
+  --color-turbo-green: #10b981;
+  --color-turbo-red: #ef4444;
+  --color-turbo-gray-900: #111827;
+  --color-turbo-gray-700: #374151;
+  --color-turbo-gray-500: #6b7280;
+  --color-turbo-gray-300: #d1d5db;
+  --color-turbo-gray-100: #f3f4f6;
+  --color-turbo-gray-50: #f9fafb;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {
-  background: var(--background);
+  background: var(--turbo-white);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+.btn-primary {
+  background: var(--turbo-blue);
+  color: white;
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--turbo-blue-dark);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--turbo-blue);
+  border: 2px solid var(--turbo-blue);
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background: var(--turbo-blue);
+  color: white;
+}
+
+::selection {
+  background: rgba(37, 99, 235, 0.2);
 }
